@@ -40,6 +40,12 @@ public class BankAccount {
     }
 
     BankAccount(String accountNumber , String accountName, double balance, String acctType, boolean active){
+        /* ENHANCEMENT 1
+        Check for initial balance cannot be assigned as a negative value
+        if(!validate(balance)){
+            // throw an error
+        }
+        */
         this.accountNumber = accountNumber;
         this.accountName = accountName;
         this.balance = balance;
