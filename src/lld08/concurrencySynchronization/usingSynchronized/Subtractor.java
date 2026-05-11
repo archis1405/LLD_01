@@ -1,7 +1,5 @@
 package lld08.concurrencySynchronization.usingSynchronized;
 
-import java.util.concurrent.locks.Lock;
-
 public class Subtractor implements Runnable{
     private Count count;
 
