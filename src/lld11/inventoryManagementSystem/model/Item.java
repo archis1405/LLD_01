@@ -1,5 +1,7 @@
 package lld11.inventoryManagementSystem.model;
 
+import java.util.Objects;
+
 public class Item implements Comparable<Item>{
     private String id;
     private String name;
@@ -33,8 +35,14 @@ public class Item implements Comparable<Item>{
     @Override
     public int compareTo(Item other) {
         /*
+            For sorting in ascending order
             this < other -> return negative (this comes first)
             this > other -> return positive (other comes first)
+            this == other -> return 0
+
+            For sorting in descending order
+            this < other -> return positive (other comes first)
+            this > other -> return negative (this comes first)
             this == other -> return 0
          */
         if(this.price < other.price){
@@ -46,5 +54,25 @@ public class Item implements Comparable<Item>{
         else{
             return 0;
         }
+    }
+
+    // equals and hashcode methods
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj){
+            return true;
+        }
+        else if(obj==null || getClass() != obj.getClass()){
+            return false;
+        }
+
+        Item item = (Item)obj;
+        return Objects.equals(id , item.id);
     }
 }
