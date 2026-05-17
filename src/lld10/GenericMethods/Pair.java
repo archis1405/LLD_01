@@ -1,4 +1,4 @@
-package lld10.GenericPair;
+package lld10.GenericMethods;
 
 public class Pair<T,V> {
     private T first;
@@ -11,13 +11,19 @@ public class Pair<T,V> {
 
     /*
         static utility method (static function: a function that belongs to the entire class)
+
         public static T getDefaultFirst(){
             return null;
         }
 
-        this will throw an error --> the error is due to static
+        this will throw an error --> the error is due to static method
+
         T is defined when the object is created now I make it static I am trying to call the method
-        even before the method is created, now in picture comes generic methods
+
+        even before the method is created, now in picture comes generic methods and this should not be allowed
+        as if the object is not created then T is not defined due to this we encounter the error here, thats why
+        it will throw error during compilation
+
      */
 
     public T getFirst(){
@@ -36,12 +42,3 @@ public class Pair<T,V> {
         this.second = second;
     }
 }
-
-/*
-    T -> Type
-    V -> Value
-    E -> Element --> can see this in set datatype of java
-    K -> Key
-    N -> Number
- */
-
